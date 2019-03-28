@@ -1,0 +1,11 @@
+import router from "../../../services/router"
+import cache from "../../../services/cache"
+
+class {
+    goLogin() {
+        cache.reset();
+        router.navigate('/');
+    }
+}
+
+<custom-button.trailers__button.trailers__logout on-click('goLogin')>Logout</custom-button>

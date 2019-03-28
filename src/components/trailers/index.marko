@@ -1,0 +1,43 @@
+style {
+  .trailers__main {
+    --trailer-divider: #4c4c4c;
+  }
+
+  .trailers__main {
+    display: flex;
+    height: 100%;
+  }
+  .trailers__nav {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .trailers__logo {
+    width: 274px;
+    height: 137px;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 130px;
+  }
+
+  .trailers__button {
+    margin: 0 auto;
+    width: 250px;
+  }
+
+  .trailers__logout {
+    margin-top: 10px;
+  }
+}
+
+import logo from '../../assets/logo_dark.png'
+
+<main.trailers__main>
+  <nav.trailers__nav>
+    <img.trailers__logo src=logo/>
+    <trailers-button/>
+    <logout-button/>
+  </nav>
+  
+  <videos />
+</main>

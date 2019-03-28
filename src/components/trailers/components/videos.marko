@@ -1,0 +1,53 @@
+import fetchPlaylist from '../../../services/fetchPlaylist'
+
+style {
+  .videos {
+    --thumbnail-height: 320px;
+    --thumbnail-width: 180px;
+
+    flex: 2 0 auto;
+    overflow: auto;
+    padding: 50px;
+
+    display: grid;
+    grid-auto-rows: minmax(min-content, max-content);
+    grid-template-columns: repeat(auto-fit, minmax(var(--thumbnail-height), 1fr));
+    grid-gap: 35px;
+
+    border-left: 1px solid var(--trailer-divider);
+    background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 98.3%);
+  }
+}
+
+import cache from '../../../services/cache';
+
+class {
+  onCreate() {
+    this.state = { items: cache.items };
+  }
+
+  onMount() {
+    if (!cache.items.length) {
+      fetchPlaylist().then(items => {
+        this.state.items = items;
+        cache.items = items;
+      });
+    }
+  }
+
+  handleLoadMore(response) {
+    response.then(items => {
+      this.state.items = [ ...this.state.items, ...items ];
+    });
+  }
+}
+
+<article.videos>
+  <for(item in state.items)>
+    <video-thumbnail 
+      thumbnail=item.snippet.thumbnails.medium.url 
+      title=item.snippet.title 
+      video-id=item.snippet.resourceId.videoId />
+  </for>
+  <load-more-button on-load-more('handleLoadMore') if(state.items.length < cache.playlistLength) />
+</article>

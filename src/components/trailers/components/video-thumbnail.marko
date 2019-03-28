@@ -1,0 +1,48 @@
+style {
+  .video-thumbnail {
+    width: var(--thumbnail-height);
+    height: var(--thumbnail-width);
+    box-shadow: 0 0 0 1px #a99e7e;
+    box-sizing: border-box;
+    margin: auto;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    }
+
+  .video-thumbnail__image {
+    margin: auto;
+    width: 100%;
+  }
+
+  .video-thumbnail__caption {
+    position: absolute;
+    bottom: 0;
+    line-height: 50px;
+    height: 50px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    color: white;
+    font-family: "Roboto Condensed";
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+}
+
+import router from '../../../services/router.js';
+
+class {
+  goPlayer() {
+    router.navigate('/player', { url: `https://www.youtube.com/embed/${this.input.videoId}` });
+  }
+}
+
+<figure.video-thumbnail on-click('goPlayer')>
+  <img.video-thumbnail__image src=input.thumbnail/>
+  <figcaption.video-thumbnail__caption title=input.title>${input.title}</figcaption>
+</figure>

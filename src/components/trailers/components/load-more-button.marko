@@ -1,0 +1,22 @@
+style {
+  .trailers__load-more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--thumbnail-height);
+    height: var(--thumbnail-width);
+    margin: auto;
+  }
+}
+
+import fetchPlaylist from '../../../services/fetchPlaylist';
+
+class {
+  loadMore() {
+    this.emit('load-more', fetchPlaylist.next());
+  }
+}
+
+<section.trailers__load-more>
+  <custom-button.trailers__button on-click('loadMore')>Load more</custom-button>
+</section>
