@@ -1,0 +1,37 @@
+style {
+  body {
+    background: url("./assets/background.png") no-repeat center top;
+    background-blend-mode: multiply;
+    background-size: cover;
+  }
+
+  body::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+}
+
+import router from "./services/router"
+
+class {
+  onCreate() {
+    this.state = { route: router.current, routeState: {} };
+  }
+
+  onMount() {
+    router.on('navigate', (route, routeState) => {
+      this.state.route = route;
+      this.state.routeState = routeState;
+    });
+  }
+}
+
+<login if(state.route === "/") route-state=state.routeState />
+<trailers if(state.route === "/trailers") route-state=state.routeState />
+<player if(state.route === "/player") route-state=state.routeState />
