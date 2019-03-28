@@ -26,12 +26,6 @@ class {
     this.state = { items: cache.items };
   }
 
-  onMount() {
-    if (!cache.items.length) {
-      fetchPlaylist();
-    }
-  }
-
   handleLoadMore(response) {
     response.then(items => {
       this.state.items = [ ...this.state.items, ...items ];

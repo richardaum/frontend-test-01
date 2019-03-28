@@ -1,0 +1,63 @@
+style {
+  @keyframes position {
+    100% { background-position: -234px; }
+  }
+  @keyframes fadein {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  .loading {
+    --delay: 3s;
+
+    height: 100%;
+    width: 100%;
+    background: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loading__inner {
+    position: relative;
+    width: 36px; 
+    height: 65px;
+  }
+  .loading__logo {
+    background: url('../../assets/loading.png') -10px -10px;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  .loading__logo-moving {
+    animation: position var(--delay) steps(4) infinite, fadein calc(var(--delay) / 4) infinite;
+    
+  }
+  .loading__logo-bg {
+    content: "";
+  }
+}
+
+import cache from '../../services/cache';
+import router from '../../services/router';
+import fetchPlaylist from '../../services/fetchPlaylist';
+
+class {
+  onMount() {
+    Promise.all([
+      fetchPlaylist(),
+      new Promise(resolve => setTimeout(resolve, 3000))
+    ]).then(() => {
+      router.navigate('/login');
+    });
+  }
+}
+
+<main.loading>
+  <div.loading__inner>
+    <div.loading__logo.loading__logo-bg />
+    <div.loading__logo.loading__logo-moving />
+  </div>
+</main>

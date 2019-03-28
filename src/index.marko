@@ -32,6 +32,7 @@ class {
   }
 }
 
-<login if(state.route === "/") route-state=state.routeState />
+<loading if(state.route === "/") route-state=state.routeState />
+<login if(state.route === "/login") route-state=state.routeState />
 <trailers if(state.route === "/trailers") route-state=state.routeState />
 <player if(state.route === "/player") route-state=state.routeState />
