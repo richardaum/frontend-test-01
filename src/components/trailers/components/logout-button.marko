@@ -1,6 +1,12 @@
 import router from "../../../services/router"
 import cache from "../../../services/cache"
 
+style {
+  .logout-button {
+    margin-top: 10px;
+  }
+}
+
 class {
     goLogin() {
         cache.reset();
@@ -8,4 +14,4 @@ class {
     }
 }
 
-<custom-button.trailers__button.trailers__logout on-click('goLogin')>Logout</custom-button>
+<custom-button.trailers__button.logout-button variant="flat" on-click('goLogin')>Logout</custom-button>

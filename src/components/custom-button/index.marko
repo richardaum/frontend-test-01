@@ -14,6 +14,17 @@ style {
       color: black;
     }
   }
+
+  .custom-button.custom-button--flat {
+    border: none;
+    color: white;
+    width: auto;
+    padding: 0;
+    &:hover {
+      background: inherit;
+      color: var(--secondary);
+    }
+  }
 }
 
 class {
@@ -22,6 +33,6 @@ class {
   }
 }
 
-<button.custom-button class=input.class on-click('handleClick')>
+<button.custom-button class=[input.class, input.variant === 'flat' && 'custom-button--flat'] on-click('handleClick')>
   <${input.renderBody}/>
 </button>
