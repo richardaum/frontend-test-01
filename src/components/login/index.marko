@@ -1,0 +1,39 @@
+style {
+  .login__main {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login__content-wrapper {
+    z-index: 0;
+  }
+
+  .login__logo {
+    width: 274px;
+    height: 137px;
+    margin-bottom: 50px;
+  }
+
+  .login__form {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+import logo from "../../assets/logo_dark.png";
+
+<main.login__main>
+  <div.login__content-wrapper>
+    <img.login__logo src=logo/>
+    <form.login__form action="javascript:void(0);">
+      <custom-input label="Email"/>
+      <custom-input label="Password" type="password"/>
+      <login-button>Login</login-button>
+    </form>
+  </div>
+</main>

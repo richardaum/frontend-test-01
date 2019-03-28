@@ -1,0 +1,15 @@
+style {
+  .login__submit {
+    margin-top: 50px;
+  }
+}
+
+import router from "../../../../services/router"
+
+class {
+  goTrailers() {
+    router.navigate('/trailers');
+  }
+}
+
+<custom-button.login__submit on-click('goTrailers')>Login</custom-button>
