@@ -45,6 +45,7 @@ class {
 <article.videos>
   <for(item in state.items)>
     <video-thumbnail 
+      key=item.id
       thumbnail=item.snippet.thumbnails.medium.url 
       title=item.snippet.title 
       video-id=item.snippet.resourceId.videoId />
