@@ -28,10 +28,7 @@ class {
 
   onMount() {
     if (!cache.items.length) {
-      fetchPlaylist().then(items => {
-        this.state.items = items;
-        cache.items = items;
-      });
+      fetchPlaylist();
     }
   }
 
