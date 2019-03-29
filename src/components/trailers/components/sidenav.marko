@@ -1,0 +1,28 @@
+style {
+  .sidenav {
+    flex: 1 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+  }
+  .sidenav__logo {
+    width: 274px;
+    height: 137px;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 130px;
+  }
+
+  @media (max-width: 800px) {
+    .sidenav {
+      display: none;
+    }
+  }
+}
+
+import logo from '../../../assets/logo_dark.png'
+
+<nav.sidenav>
+  <img.sidenav__logo src=logo/>
+  <trailers-button/>
+  <logout-button/>
+</nav>

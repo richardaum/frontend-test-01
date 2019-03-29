@@ -5,19 +5,13 @@ style {
 
   .trailers__main {
     display: flex;
-    height: 100%;
+    min-height: 100%;
   }
-  .trailers__nav {
-    flex: 1 0 auto;
-    display: flex;
-    flex-flow: column nowrap;
-  }
-  .trailers__logo {
-    width: 274px;
-    height: 137px;
-    margin: 0 auto;
-    margin-top: 90px;
-    margin-bottom: 130px;
+
+  @media (max-width: 800px) {
+    .trailers__main {
+      display: block;
+    }
   }
 
   .trailers__button {
@@ -26,14 +20,11 @@ style {
   }
 }
 
-import logo from '../../assets/logo_dark.png'
-
 <main.trailers__main>
-  <nav.trailers__nav>
-    <img.trailers__logo src=logo/>
-    <trailers-button/>
-    <logout-button/>
-  </nav>
-  
+  <toolbar>
+    <span>Trailers</span>
+    <logout-button.toolbar__logout-button/>
+  </toolbar>
+  <sidenav />  
   <videos />
 </main>

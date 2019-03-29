@@ -17,6 +17,14 @@ style {
     border-left: 1px solid var(--trailer-divider);
     background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 98.3%);
   }
+
+  @media (max-width: 800px) {
+    .videos {
+      border-left: none;
+      display: block;
+      padding: 20px;
+    }
+  }
 }
 
 import cache from '../../../services/cache';

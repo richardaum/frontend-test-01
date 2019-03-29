@@ -1,24 +1,54 @@
 style {
   .player {
-      height: 100%;
-      width: 100%;
-      background: rgba(29, 26, 26, 0.9);
+    height: 100%;
+    width: 100%;
+    background: rgba(29, 26, 26, 0.9);
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 800px) {
+    .player {
+      flex-flow: column nowrap;
+      align-items: unset;
+      justify-content: unset;
+    }
   }
 
   .player__video {
-      padding: 10px;
-      background: black;
-      box-shadow: 0 0 0 1px var(--secondary);
+    width: 925px;
+    height: 557px;
+    padding: 10px;
+    background: black;
+    box-shadow: 0 0 0 1px var(--secondary);
   }
 
   .player__close-button {
-      position: absolute;
-      top: 10px;
-      right: 30px;
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+  }
+
+  @media (max-width: 800px) {
+    .toolbar {
+      flex: 0 0 auto;
+    }
+    .player > .player__close-button {
+      display: none;
+    }
+    .toolbar .player__close-button {
+      position: unset;
+      margin: 0;
+      margin-left: auto;
+    }
+    .player__video {
+      width: 100%;
+      flex: 1;
+      padding: 0;
+    }
   }
 }
 
@@ -35,10 +65,12 @@ class {
 }
 
 <main.player>
+  <toolbar>
+    <span>Youtube Video</span>
+    <custom-button.player__close-button variant="flat" on-click('goTrailers')>Close</custom-button>
+  </toolbar>
   <custom-button.player__close-button variant="flat" on-click('goTrailers')>Close</custom-button>
   <iframe.player__video 
-    width="925" 
-    height="557" 
     src=component.routeState.url
     frameborder="0" 
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 

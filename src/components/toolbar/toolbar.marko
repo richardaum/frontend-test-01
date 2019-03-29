@@ -1,0 +1,40 @@
+style {
+  .toolbar__logo {
+    box-sizing: content-box;
+    height: calc(100% - 20px);
+    padding: 10px 0;
+    margin-right: 10px;
+  }
+
+  .toolbar {
+    font-family: "Roboto Condensed";
+    height: 48px;
+    padding: 0 20px;
+    background: black;
+    color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
+
+  @media (min-width: 801px) {
+    .toolbar {
+      display: none;
+    }
+  }
+
+  .toolbar .toolbar__logout-button {
+    margin: 0;
+    margin-left: auto;  
+  }
+}
+
+import logo from "../../assets/logo.png";
+
+<div.toolbar>
+  <img.toolbar__logo src=logo/>
+  <${input.renderBody}/>
+</div>
