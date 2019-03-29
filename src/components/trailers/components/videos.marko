@@ -28,7 +28,7 @@ class {
 
   handleLoadMore(response) {
     response.then(items => {
-      this.state.items = [ ...this.state.items, ...items ];
+      this.state.items = items;
     });
   }
 }

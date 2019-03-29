@@ -17,11 +17,11 @@ const __fetchPlaylist = async ({ pageToken } = {}) => {
   const response = await axios.get(encodeURI(url));
   const { items } = response.data;
 
-  cache.items = items;
+  cache.items = [...cache.items, ...items];
   cache.playlist = response.data;
   cache.playlistLength = response.data.pageInfo.totalResults;
 
-  return items;
+  return cache.items;
 };
 
 export default async function fetchPlaylist() {
