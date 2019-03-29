@@ -1,52 +1,13 @@
-# Marko Starter Demo
-This repo demos the basic features of [`marko-starter`](https://github.com/marko-js/marko-starter).
+# inGaia Front-end Test 01
 
-## Install
+## Requirements
+- [x] MarkoJS
+- [x] Responsiveness
+- [x] Youtube API
+- [x] Unit tests (only a few of them, Markojs is really hard to get the working for UTs haha)
 
-```bash
-npm install
-```
-
-## Starting the server
-
-```bash
-npm start
-```
-
-Start the server in production mode (minification enabled, etc.):
-
-```bash
-NODE_ENV=production npm start
-```
-
-## Build a static site
-Build the project in production mode:
-
-```bash
-npm run build
-```
-
-By default, the generated static site will be placed in `dist/`.
-
-## Feature Demos
-
-### Live reload
-
-Change a file and the server will restart and the browser will refresh.  Hot reload is enabled for certain files.
-
-### Components
-
-See example components and how they can be scoped to pages or the whole site.
-
-### Routing
-
-Learn to create routes and use route parameters.
-
-### Layouts
-
-Learn to create components that can be passed content and include that content in their own template.
-
-### Styles and Images
-
-Learn how to use styles within a component and how to use resources (like images) in a component.
-
+## Tips
+- [x] Animations
+- [x] Coverage (not 100% due to the dificulty to write UTs and interact with the components from there).
+- [x] e2e (only 1, they're easy to write but I have no time to do more as I'd like, 'cause Cypress rocks!)
+- [ ] CI :(
