@@ -1,7 +1,7 @@
-import axios from "axios";
-import cache from "./cache";
+const axios = require("axios");
+const cache = require("./cache");
 
-// TODO replace api key
+// TODO replace api key, use dotenv, server-side rendering, idk
 const API_KEY = "YOUR_API_KEY_HERE";
 const PLAYLIST = "PL6t93nUFQQ1ZiXMfhPyhjb0PX3LgEVMcF";
 const MAX_RESULTS = 5;
@@ -24,7 +24,7 @@ const __fetchPlaylist = async ({ pageToken } = {}) => {
   return cache.items;
 };
 
-export default async function fetchPlaylist() {
+async function fetchPlaylist() {
   return __fetchPlaylist();
 }
 
@@ -32,3 +32,5 @@ fetchPlaylist.next = async () => {
   const pageToken = cache.playlist.nextPageToken;
   return __fetchPlaylist({ pageToken });
 };
+
+module.exports = fetchPlaylist;

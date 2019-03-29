@@ -10,4 +10,4 @@ class Cache {
   }
 }
 
-export default new Cache();
+module.exports = new Cache();

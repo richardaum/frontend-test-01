@@ -1,1 +1,14 @@
-node_modules
+
+.git/
+node_modules/
+dist/
+.cache/
+*.log
+*.bak.js
+*.bak
+*.marko.js
+.DS_STORE
+dump.rdb
+.marko-devtools/
+.marko-cli/
+.nyc_output/

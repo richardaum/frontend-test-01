@@ -24,5 +24,6 @@ module.exports = {
   rules: {
     "prettier/prettier": "error",
     "global-require": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/test.js"]}]
   },
 };

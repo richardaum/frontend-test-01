@@ -1,1 +1,3 @@
-module.exports = function(markoCli) {};
+require('@babel/register');
+
+module.exports = function (markoCli) {};

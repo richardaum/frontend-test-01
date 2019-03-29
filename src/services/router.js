@@ -1,4 +1,4 @@
-import EventEmitter from "events";
+const { EventEmitter } = require("events");
 
 class Router extends EventEmitter {
   constructor(props) {
@@ -12,4 +12,4 @@ class Router extends EventEmitter {
   }
 }
 
-export default new Router();
+module.exports = new Router();

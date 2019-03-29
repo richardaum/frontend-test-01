@@ -2,5 +2,5 @@ config
 public
 node_modules
 marko-cli.js
-test.js
 *.spec.js
+*.marko.js
