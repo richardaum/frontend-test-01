@@ -9,13 +9,12 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production marko-starter build",
     "format": "prettier src/**/*.{js,css,less} --write && marko-prettyprint src",
     "lint": "eslint src",
-    "serve": "NODE_ENV=production marko-starter serve-static",
     "start": "webpack-dev-server --config config/webpack.config.js",
     "test": "marko test",
-    "cov": "npx nyc npm test"
+    "cov": "npx nyc npm test",
+    "e2e": "concurrently --kill-others \"npm start\" \"cypress run\""
   },
   "jest": {
     "collectCoverageFrom": [
@@ -44,6 +43,7 @@
     "autoprefixer": "^9.5.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.2.0",
+    "concurrently": "^4.1.0",
     "css-loader": "^2.1.1",
     "eslint": "^5.15.3",
     "eslint-config-airbnb-base": "^13.1.0",

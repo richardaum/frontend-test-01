@@ -11,3 +11,10 @@
 - [x] Coverage (not 100% due to the dificulty to write UTs and interact with the components from there).
 - [x] e2e (only 1, they're easy to write but I have no time to do more as I'd like, 'cause Cypress rocks!)
 - [ ] CI :(
+
+## Commands
+
+- npm start - Run the web server
+- npm test - Run the unit tests
+- npm run cov - Run the unit tests displaying the coverage report
+- npm run e2e - Run the e2e/integration tests
