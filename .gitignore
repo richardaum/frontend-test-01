@@ -12,3 +12,8 @@ dump.rdb
 .marko-devtools/
 .marko-cli/
 .nyc_output/
+
+cypress/plugins/
+cypress/screenshots/
+cypress/support/
+cypress/videos/

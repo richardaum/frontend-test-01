@@ -10,6 +10,7 @@ module.exports = {
   plugins: ["prettier"],
   extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
   globals: {
+    cy: 'readonly',
     test: 'readonly',
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
